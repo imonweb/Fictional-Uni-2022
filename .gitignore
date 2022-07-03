@@ -76,7 +76,7 @@ wp-content/*
 !wp-content/mu-plugins/
 !wp-content/plugins/
 !wp-content/themes/
-hello.php
+ 
 
 #ignore specific plugins
 plugins/hello.php 
