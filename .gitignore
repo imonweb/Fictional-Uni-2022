@@ -1,0 +1,97 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+.env
+node_modules/
+.tmp/
+
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodotools
+_notes
+dwsync.xml
+
+.idea
+ 
+logs
+dist
+artifact
+vendor
+visual-regression/*
+**/*.js.map
+**/*.css.map
+**/.DS_Store
+e2e-tests/cypress/videos/*
+header-footer-grid/assets/css/style*
+storybook-static
+yarn-error.log
+assets/js/build/*
+#assets/css/*
+style-main*
+style-main-new*
+assets/apps/*/build/*
+languages/neve.pot
+/e2e-tests/cypress/screenshots/
+logs.log
+
+ 
+# theme files excluded
+#docker-compose.ci.yml
+#docker-compose.yml
+#bin
+#e2e-tests
+#grunt
+#phpstan.neon
+#stories
+#style-main-new.css.map
+#lint-staged.config.js
+#phpunit.xml
+#rollup.config.js
+#composer.json
+
+# ignore everything in the root except  the "wp-content" directory.
+!wp-content/
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins", "plugins", "themes" directory
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+hello.php
+
+#ignore specific plugins
+plugins/hello.php 
+plugins/advanced-custom-fields-pro/
+plugins/akismet/
+
+#ignore specific themes
+themes/twenty*/
+
+# ignore node dependency directories
+# node_modules
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+
