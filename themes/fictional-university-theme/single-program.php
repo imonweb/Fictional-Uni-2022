@@ -31,6 +31,7 @@
              )
             )
           ));
+ 
 
           if($relatedProfessors->have_posts()){
             echo '<hr class="section-break">';
