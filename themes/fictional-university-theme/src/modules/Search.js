@@ -48,12 +48,12 @@ class Search {
   getResults(){
     // this.resultsDiv.html("Imagine real search reult here.");
     // this.isSpinnerVisible = false;
-    $.getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
-      // alert(posts[0].title.rendered);
-      // <li><a href="${posts[0].link}">${posts[0].title.rendered}</a></li>
-     
-     $.getJSON(universityData.root_url + '/wp-json/wp/v2/pages?search=' + this.searchField.val(), pages => {
-       const combinedResults = posts.concat(pages);
+
+    $.when(
+      $.getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val()), 
+      $.getJSON(universityData.root_url + '/wp-json/wp/v2/pages?search=' + this.searchField.val())
+      ).then((posts, pages) => {
+       const combinedResults = posts[0].concat(pages[0]);
        this.resultsDiv.html(`
         <h2 class="search-overlay__section-title">General Information</h2>
         ${combinedResults.length ? '<ul class="link-list min-list">' : '<p>No general information matches the search.</p>'}
@@ -62,8 +62,20 @@ class Search {
         </ul>
       `);
       this.isSpinnerVisible = false;
+    }, () => {
+      this.resultsDiv.html('<p>Unexpected error; please try again.</p>');
+    });
+
+    /*
+    $.getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
+      // alert(posts[0].title.rendered);
+      // <li><a href="${posts[0].link}">${posts[0].title.rendered}</a></li>
+     
+     $.getJSON(universityData.root_url + '/wp-json/wp/v2/pages?search=' + this.searchField.val(), pages => {
+      
      });
     });
+    */
   }
 
   keyPressDispatcher(e){
