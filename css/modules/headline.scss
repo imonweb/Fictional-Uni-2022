@@ -4,6 +4,7 @@
   font-weight: 300;
 
   &--large {
+    color: red;
     font-size: 3.6rem;
     @include atSmall {
       font-size: 6.25rem;
