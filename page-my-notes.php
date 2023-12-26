@@ -23,6 +23,7 @@
       <input class="new-note-title" type="text" placeholder="title">
       <textarea class="new-note-body" placeholder="Your note here..."></textarea>
       <span class="submit-note">Create Note</span>
+      <span class="note-limit-message">Note limit reached: delete an existing note to make room for a new one.</span>
     </div>
 
 
@@ -38,6 +39,7 @@
           $userNotes->the_post(); ?>
 
           <li data-id="<?php the_ID(); ?>">
+            <?php //echo esc_html(get_the_content()); ?>
             <input readonly class="note-title-field" value="<?php echo str_replace('Private: ','',esc_attr(get_the_title())); ?>" type="text">
             <span class="edit-note"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
             <span class="delete-note"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</span>
