@@ -70,6 +70,7 @@ function university_files() {
   /* search - rest api */
   wp_localize_script('main-university-js', 'universityData', array(
     'root_url' => get_site_url(),
+    'nonce' => wp_create_nonce('wp_rest')
     
   ));
 
