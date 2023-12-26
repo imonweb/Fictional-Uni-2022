@@ -14,6 +14,9 @@
 // }
 // add_action('init','pwn_this_site');
 
+// REST API: Professor like custom POST and DELETE endpoints
+require get_theme_file_path('/inc/like-route.php');
+
 // REST API: Add new Custom Route (URL)
 require get_theme_file_path('/inc/search-route.php');
 
