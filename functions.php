@@ -38,9 +38,23 @@ function university_custom_rest(){
 }
 add_action('rest_api_init', 'university_custom_rest');
 
-function pageBanner($args = NULL) {
 
-  if(!$args['title']){
+
+// function pageBanner($args = NULL) {
+function pageBanner($args = array('title'=>NULL, 'subtitle' => NULL, 'photo' => NULL)) {
+
+  // if(!array_key_exists('title', $args)){
+  //   $args['title'] = get_the_title();
+  // }
+
+  // if(!$args['title']){
+  //   $args['title'] = get_the_title();
+  // }
+ 
+
+  if(!isset($args['title'])){
+    $args['title'] = get_the_title();
+  } else {
     $args['title'] = get_the_title();
   }
 
